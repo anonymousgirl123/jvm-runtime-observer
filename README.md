@@ -1,4 +1,6 @@
-# jvm-runtime-observer
+# jvm-runtime-observer ![CI](https://github.com/anonymousgirl123/jvm-runtime-observer/actions/workflows/ci.yml/badge.svg)
+
+
 
 **An embeddable JVM runtime observability and diagnostics platform for production Java systems.**
 
