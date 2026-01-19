@@ -35,4 +35,10 @@ This project explores a **library-first, embeddable approach** to JVM observabil
 
 <img width="371" height="527" alt="image" src="https://github.com/user-attachments/assets/af5f6a93-0898-44f8-b883-9dc8f2f9e7ad" />
 
+### Analysis Reports
+
+
+
+<img width="1536" height="1024" alt="metrics_jvm" src="https://github.com/user-attachments/assets/14057f4c-106c-496b-872b-d095f1b7f63a" />
+
 
