@@ -1,12 +1,41 @@
+//allprojects {
+//    group = "io.github.jvmobserver"
+//    version = "0.1.0"
+//    repositories { mavenCentral() }
+//}
+
 allprojects {
-    group = "io.github.jvmobserver"
+    group = "io.github.anonymousgirl123"
     version = "0.1.0"
-    repositories { mavenCentral() }
+
+    repositories {
+        mavenCentral()
+    }
 }
 
 subprojects {
     apply plugin: "java-library"
+    apply plugin: "maven-publish"
+
     java {
-        toolchain { languageVersion = JavaLanguageVersion.of(17) }
+        toolchain {
+            languageVersion = JavaLanguageVersion.of(17)
+        }
+    }
+
+    publishing {
+        publications {
+            mavenJava(MavenPublication) {
+                from components.java
+            }
+        }
     }
 }
+
+
+//subprojects {
+//    apply plugin: "java-library"
+//    java {
+//        toolchain { languageVersion = JavaLanguageVersion.of(17) }
+//    }
+//}

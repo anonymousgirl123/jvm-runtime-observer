@@ -1,1 +1,3 @@
-dependencies { api project(':observer-api') }
+dependencies {
+    api project(":observer-api")
+}

@@ -1,1 +1,4 @@
-dependencies { api project(':observer-api') }
+dependencies {
+    api project(":observer-api")          // exposed to apps
+    implementation project(":observer-diagnostics") // INTERNAL
+}
