@@ -1,11 +1,11 @@
 allprojects {
-    group = 'io.github.jvmobserver'
-    version = '0.1.0'
-
-    apply plugin: 'java-library'
-
+    group = "io.github.jvmobserver"
+    version = "0.1.0"
     repositories { mavenCentral() }
+}
 
+subprojects {
+    apply plugin: "java-library"
     java {
         toolchain { languageVersion = JavaLanguageVersion.of(17) }
     }

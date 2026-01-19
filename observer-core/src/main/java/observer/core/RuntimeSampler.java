@@ -1,5 +1,6 @@
 package observer.core;
 
+import observer.api.RuntimeSnapshot;
 import java.lang.management.*;
 import java.util.List;
 import com.sun.management.OperatingSystemMXBean;
@@ -9,17 +10,15 @@ final class RuntimeSampler {
     private static final MemoryMXBean MEMORY = ManagementFactory.getMemoryMXBean();
     private static final ThreadMXBean THREADS = ManagementFactory.getThreadMXBean();
     private static final List<GarbageCollectorMXBean> GCS =
-        ManagementFactory.getGarbageCollectorMXBeans();
+            ManagementFactory.getGarbageCollectorMXBeans();
     private static final OperatingSystemMXBean OS =
-        (OperatingSystemMXBean) ManagementFactory.getOperatingSystemMXBean();
+            (OperatingSystemMXBean) ManagementFactory.getOperatingSystemMXBean();
 
     private long lastGcCount;
     private long lastGcTime;
 
     RuntimeSnapshot sample() {
-        long now = System.currentTimeMillis();
         MemoryUsage heap = MEMORY.getHeapMemoryUsage();
-
         int live = THREADS.getThreadCount();
         int blocked = 0;
         for (long id : THREADS.getAllThreadIds()) {
@@ -38,7 +37,12 @@ final class RuntimeSampler {
         lastGcCount = gcCount;
         lastGcTime = gcTime;
 
-        return new RuntimeSnapshot(now, heap.getUsed(), heap.getMax(),
-            deltaTime, deltaCount, live, blocked, OS.getProcessCpuLoad());
+        return new RuntimeSnapshot(
+                System.currentTimeMillis(),
+                heap.getUsed(), heap.getMax(),
+                deltaTime, deltaCount,
+                live, blocked,
+                OS.getProcessCpuLoad()
+        );
     }
 }

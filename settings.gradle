@@ -1,2 +1,2 @@
-rootProject.name = 'jvm-runtime-observer'
-include 'observer-core','observer-diagnostics','observer-exporter','observer-jfr'
+rootProject.name = "jvm-runtime-observer"
+include("observer-api","observer-core","observer-diagnostics","observer-exporter","observer-jfr")

@@ -1,4 +1,4 @@
-package observer.core;
+package observer.api;
 
 public final class RuntimeSnapshot {
     public final long timestampMillis;
@@ -10,8 +10,8 @@ public final class RuntimeSnapshot {
     public final int blockedThreads;
     public final double processCpuLoad;
 
-    RuntimeSnapshot(long ts, long used, long max, long gcPause, long gcCount,
-                    int live, int blocked, double cpu) {
+    public RuntimeSnapshot(long ts,long used,long max,long gcPause,long gcCount,
+                           int live,int blocked,double cpu) {
         this.timestampMillis = ts;
         this.heapUsedBytes = used;
         this.heapMaxBytes = max;
