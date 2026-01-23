@@ -1,7 +1,7 @@
 # jvm-runtime-observer ![CI](https://github.com/anonymousgirl123/jvm-runtime-observer/actions/workflows/ci.yml/badge.svg?branch=main)
 
 
-**An embeddable JVM runtime observability and diagnostics platform for production Java systems.**
+**An embeddable JVM runtime observability and diagnostics platform for production Java systems.** 
 
 `jvm-runtime-observer` is a low-overhead Java platform library that provides deep visibility into **JVM, GC, threading, and CPU behavior**, and converts raw runtime metrics into **high-signal diagnostic events**.  
 It is designed for **platform teams**, **latency-sensitive services**, and **large-scale infrastructure**, without requiring agents or framework lock-in.
